@@ -39,6 +39,7 @@ public class Atmoasis {
             System.out.println("\n\n\t\t1.Withdrawal");
             System.out.println("\n\t\t2.Deposit");
             System.out.println("\n\t\t3.Check balance");
+            System.out.println("\n\t\t4.Transfer");
             System.out.println("\n\t Please select the option: ");
             option=sc.nextInt();
             switch(option)
@@ -76,6 +77,20 @@ public class Atmoasis {
               case 3:
                System.out.println("\n\t Your  balance is Rs. "+balance);
                break;
+
+               case 4:
+                        System.out.println("\n\tEnter the amount to transfer: ");
+                        int transferAmount = sc.nextInt();
+                        if (transferAmount > balance) {
+                            System.out.println("\n\tSorry, insufficient balance for transfer.");
+                            break;
+                        }
+                        System.out.println("\n\tEnter the account number to transfer to: ");
+                        String accountNumber = sc.next();
+                        // Perform transfer logic here
+                        System.out.println("\n\tTransfer of Rs. " + transferAmount + " to account " + accountNumber + " successful!");
+                        balance -= transferAmount;
+                        break;
                
               default:
                // Beep(610,500); //freq. , duration
